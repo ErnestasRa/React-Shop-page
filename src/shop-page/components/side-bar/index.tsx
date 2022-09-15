@@ -12,16 +12,15 @@ import {
     ListItemText,
 } from '@mui/material';
 import DrawerHeader from '../../drawer-header';
-import SidebarContainer, { type SidebarContainerProps } from './sidebar-container';
+import SidebarContainer from './sidebar-container';
 
 type SidebarProps = {
-    SidebarContainerProps: Omit<SidebarContainerProps, 'open' | 'variant'>
     open: boolean,
     handleDrawerClose: VoidFunction,
 };
 
-const Sidebar: React.FC<SidebarProps> = ({ open, handleDrawerClose, SidebarContainerProps }) => (
-  <SidebarContainer variant="permanent" open={open} {...SidebarContainerProps}>
+const Sidebar: React.FC<SidebarProps> = ({ open, handleDrawerClose }) => (
+  <SidebarContainer variant="permanent" open={open}>
     <DrawerHeader>
       <IconButton onClick={handleDrawerClose}>
         <ChevronLeftIcon />

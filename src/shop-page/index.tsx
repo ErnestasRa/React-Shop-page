@@ -9,8 +9,6 @@ import DrawerHeader from './drawer-header';
 import AppBarComponent from './components/app-bar';
 import Sidebar from './components/side-bar';
 
-const drawerWidth = 240;
-
 const MiniDrawer = () => {
   const [open, setOpen] = React.useState(false);
 
@@ -28,10 +26,8 @@ const MiniDrawer = () => {
       <AppBarComponent
         open={open}
         handleDrawerOpen={handleDrawerOpen}
-        AppBarContainerProps={{ drawerWidth }}
       />
       <Sidebar
-        SidebarContainerProps={{ drawerWidth }}
         open={open}
         handleDrawerClose={handleDrawerClose}
       />

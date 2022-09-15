@@ -7,10 +7,9 @@ import {
     IconButton,
 
 } from '@mui/material';
-import AppBarContainer, { type AppBarContainerProps } from './appbar-container';
+import AppBarContainer from './appbar-container';
 
 type ApplicationBarProps = {
-    AppBarContainerProps: Omit<AppBarContainerProps, 'fixed' | 'open'>,
     open?: boolean,
     handleDrawerOpen: VoidFunction,
   };
@@ -18,9 +17,8 @@ type ApplicationBarProps = {
 const AppBarComponent:React.FC<ApplicationBarProps> = ({
      open,
      handleDrawerOpen,
-     AppBarContainerProps,
 }) => (
-  <AppBarContainer position="fixed" open={open} {...AppBarContainerProps}>
+  <AppBarContainer position="fixed" open={open}>
     <Toolbar>
       <IconButton
         color="inherit"
