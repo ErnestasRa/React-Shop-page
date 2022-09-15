@@ -1,15 +1,41 @@
-declare module '@mui/material/styles/createTheme' {
-    interface ThemeOptions {
-      common: {
-        drawerWidth: number,
-      }
-    }
+import { CSSObject } from '@mui/material';
 
-    interface Theme {
-      common: {
-        drawerWidth: number,
-      }
+// declare module '@mui/material/styles/createPalette' {
+//   interface PaletteOptions {
+//     manoSpalva: PaletteColor
+//   }
+
+//   interface Palette {
+//     manoSpalva: PaletteColor
+//   }
+// }
+
+declare module '@mui/material/styles/createTheme' {
+  interface ThemeOptions {
+    common?: {
+      drawerWidth: number,
     }
   }
 
-  export { };
+  interface Theme {
+    common: {
+      drawerWidth: number,
+    }
+  }
+}
+
+declare module '@mui/material/styles/createMixins' {
+  interface MixinsOptions {
+    drawer: {
+      openedMixin: CSSObject,
+      closedMixin: CSSObject,
+    }
+  }
+
+  interface Mixins {
+    drawer: {
+      openedMixin: CSSObject,
+      closedMixin: CSSObject,
+    }
+  }
+}
